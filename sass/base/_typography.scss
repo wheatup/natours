@@ -51,11 +51,10 @@ body {
    transition-timing-function: ease-out;
    backface-visibility: hidden;
 
-   &:hover{
-      transform: skew(-5deg, 1deg);
-      text-shadow: .5rem 0rem 2rem rgba($color-black, .2);
-      text-transform: uppercase;
-   }
+   // &:hover{
+   //    transform: skew(-5deg, 1deg);
+   //    text-shadow: .5rem 0rem 2rem rgba($color-black, .2);
+   // }
 }
 
 .heading-tertiary{
