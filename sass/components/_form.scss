@@ -1,4 +1,8 @@
 .form {
+   @include respond(tab-port){
+      text-align: center;
+   }
+
    &__group {
       &:not(:last-child){
          margin-bottom: 2rem;
@@ -15,9 +19,13 @@
       border: none;
       border-bottom: 3px solid transparent;
       width: 90%;
+      @include respond(tab-port){
+         width: 100%;
+      }
       display: block;
       transition-property: border-bottom;
       transition-duration: .3s;
+
 
       &:focus {
          outline: none;

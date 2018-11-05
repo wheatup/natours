@@ -8,18 +8,42 @@
    padding-left: 9rem;
    font-size: $default-font-size;
    transform: skewX(-12deg);
+
+   @include respond(tab-port) {
+      transform: skewX(0deg);
+      width: 100%;
+      padding: 3rem;
+      padding-left: 3rem;
+      text-align: center;
+   }
+
    position: relative;
 
    &__shape {
-      width: 15rem;
-      height: 15rem;
       float: left;
       background-color: steelblue;
-      shape-outside: $circle;
-      -webkit-shape-outside: $circle;
-      clip-path: $circle;
-      -webkit-clip-path: $circle;
+      overflow: hidden;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+
+      @supports(clip-path: $circle) or (-webkit-clip-path: $circle) {
+         shape-outside: $circle;
+         -webkit-shape-outside: $circle;
+         clip-path: $circle;
+         -webkit-clip-path: $circle;
+         border-radius: none;
+      }
+
       transform: translateX(-2rem) skewX(12deg);
+
+      @include respond(tab-port) {
+         transform: translateX(0rem) skewX(0deg);
+         float: none;
+         margin: 0 auto;
+         margin-bottom: 2rem;
+      }
+
       margin-top: -2rem;
    }
 
@@ -32,6 +56,10 @@
 
    &__text {
       transform: skewX(12deg);
+
+      @include respond(tab-port) {
+         transform: skewX(0deg);
+      }
    }
 
    &__caption {
@@ -48,12 +76,12 @@
       transition-timing-function: ease-out;
    }
 
-   &:hover &__caption{
+   &:hover &__caption {
       opacity: 1;
       margin-top: 0rem;
    }
 
-   &:hover &__image{
+   &:hover &__image {
       opacity: 1;
       margin-top: 0rem;
       transform: translateX(-15%) scale(1);

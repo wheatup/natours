@@ -5,7 +5,6 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-   <link rel="stylesheet" href="css/icon-font.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
@@ -13,6 +12,23 @@
 </head>
 
 <body>
+   <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+         <span class="navigation__icon">&nbsp;</span>
+      </label>
+      <div class="navigation__background"></div>
+      <nav class="navigation__nav">
+         <ul class="navigation__list">
+            <li class="navigation__item"><a href="javascript:void(0)" class="navigation__link">About Natours</a></li>
+            <li class="navigation__item"><a href="javascript:void(0)" class="navigation__link">Your Benifits</a></li>
+            <li class="navigation__item"><a href="javascript:void(0)" class="navigation__link">Popular Tours</a></li>
+            <li class="navigation__item"><a href="javascript:void(0)" class="navigation__link">Stories</a></li>
+            <li class="navigation__item"><a href="javascript:void(0)" class="navigation__link">Book Now</a></li>
+         </ul>
+      </nav>
+   </div>
+
    <header class="header">
       <div class="header__logo-box">
          <img src="./img/logo-white.png" class="header__logo" alt="Logo" />
@@ -48,13 +64,30 @@
                   repellendus tempore laborum? Neque, provident tenetur.
                </p>
 
-               <a href="javascript:void(0)" class="btn-text">learn More &rarr;</a>
+               <a href="javascript:void(0)" class="btn-text">Learn More &rarr;</a>
             </div>
             <div class="col-1-of-2">
                <div class="composition">
+                  <img srcset="./img/nat-1.jpg 300w, ./img/nat-1-large.jpg 1000w" 
+                     sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 18.75em" 
+                     alt="Photo 1" class="composition__photo composition__photo--p1" 
+                     src="./img/nat-1-large.jpg"
+                  />
+                  <img srcset="./img/nat-2.jpg 300w, ./img/nat-2-large.jpg 1000w" 
+                     sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 18.75em" 
+                     alt="Photo 2" class="composition__photo composition__photo--p2" 
+                     src="./img/nat-2-large.jpg"
+                  />
+                  <img srcset="./img/nat-3.jpg 300w, ./img/nat-3-large.jpg 1000w" 
+                     sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 18.75em" 
+                     alt="Photo 3" class="composition__photo composition__photo--p3" 
+                     src="./img/nat-3-large.jpg"
+                  />
+                  <!--
                   <img src="./img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
                   <img src="./img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
                   <img src="./img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                  -->
                </div>
             </div>
          </div>
@@ -142,7 +175,7 @@
                            <p class="card__price-only">Only</p>
                            <p class="card__price-value">297</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn btn--white">Book Now!</a>
+                        <a href="#popup" class="btn btn--white">Book Now!</a>
                      </div>
                   </div>
                </div>
@@ -174,7 +207,7 @@
                            <p class="card__price-only">Only</p>
                            <p class="card__price-value">597</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn btn--white">Book Now!</a>
+                        <a href="#popup" class="btn btn--white">Book Now!</a>
                      </div>
                   </div>
                </div>
@@ -206,7 +239,7 @@
                            <p class="card__price-only">Only</p>
                            <p class="card__price-value">497</p>
                         </div>
-                        <a href="javascript:void(0)" class="btn btn--white">Book Now!</a>
+                        <a href="#popup" class="btn btn--white">Book Now!</a>
                      </div>
                   </div>
                </div>
@@ -314,7 +347,10 @@
 
    <footer class="footer">
       <div class="footer__logo-box">
-         <img src="./img/logo-green-2x.png" alt="Full Logo" class="footer__logo">
+         <picture class="footer__logo">
+            <source srcset="./img/logo-green-small-1x.png 1x, ./img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+            <img srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x" alt="Full Logo" class="footer__logo" src="./img/logo-green-2x.png">
+         </picture>
       </div>
       <div class="row">
          <div class="col-1-of-2">
@@ -332,11 +368,30 @@
             <p class="footer__copyright">
                Copyright &copy; by wheatup - MIT copyright 2018-2022.
                Built by <a href="javascript:void(0)" class="footer__link">wheatup</a>.
-               Designed by <a href="javascript:void(0)" class="footer__link">Jonas Schmedtmann</a> by their Learning Advanced css/sass courses.
+               Designed by <a href="javascript:void(0)" class="footer__link">Jonas Schmedtmann</a> by their Learning
+               Advanced css/sass courses.
             </p>
          </div>
       </div>
    </footer>
+
+   <div class="popup" id="popup">
+      <div class="popup__content">
+         <div class="popup__left">
+            <img src="./img/nat-8.jpg" alt="Tour Photo" class="popup__image">
+            <img src="./img/nat-9.jpg" alt="Tour Photo" class="popup__image">
+         </div>
+         <div class="popup__right">
+            <a href="#section-tours" class="popup__close">&times;</a>
+            <h2 class="heading-secondary u-margin-bottom-medium">Start Booking Now</h2>
+            <h3 class="heading-tertiary">Important &ndash; Please read these terms before booking.</h3>
+            <p class="popup__text">
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam minus voluptatibus reiciendis consequuntur pariatur nulla culpa, consectetur neque laudantium doloribus veritatis, magnam velit perferendis! Et porro autem quaerat molestias sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta rem accusantium beatae obcaecati laboriosam odio ducimus quis sed impedit? Explicabo numquam nam laboriosam enim dolor laudantium quasi reiciendis magnam aut?
+            </p>
+            <a href="javascript:void(0)" class="btn btn--green">Book Now</a>
+         </div>
+      </div>
+   </div>
 </body>
 
 </html>

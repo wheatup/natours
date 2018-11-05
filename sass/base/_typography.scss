@@ -2,7 +2,6 @@ body {
    font-family: "Lato", sans-serif;
    font-weight: 400;
    line-height: 1.7;
-   padding: 3rem;
    color: $color-grey-dark;
 }
 
@@ -22,6 +21,11 @@ body {
       animation: moveFromLeft 1s ease-out;
       animation-fill-mode: forwards;
       animation-delay: .5s;
+
+      @include respond(phone){
+         letter-spacing: 1rem;
+         font-size: 5rem;
+      }
    }
 
    &--sub {
@@ -34,6 +38,11 @@ body {
       animation: moveFromRight 1s ease-out;
       animation-fill-mode: forwards;
       animation-delay: 1s;
+
+      @include respond(phone){
+         letter-spacing: .5rem;
+         font-size: 1rem;
+      }
    }
 }
 
@@ -51,6 +60,14 @@ body {
    transition-timing-function: ease-out;
    backface-visibility: hidden;
 
+   @include respond(tab-port){
+      font-size: 3rem;
+   }
+
+   @include respond(phone){
+      font-size: 2.5rem;
+   }
+
    // &:hover{
    //    transform: skew(-5deg, 1deg);
    //    text-shadow: .5rem 0rem 2rem rgba($color-black, .2);
@@ -61,6 +78,9 @@ body {
    font-size: $default-font-size;
    font-weight: 700;
    text-transform: uppercase;
+   @include respond(tab-port){
+      margin-bottom: 1rem;
+   }
 }
 
 .paragraph{
